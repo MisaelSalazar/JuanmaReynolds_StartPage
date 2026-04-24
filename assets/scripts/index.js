@@ -78,3 +78,14 @@ btns.forEach(btn => {
 });
 
 startAuto();
+
+//SERVICIOS
+document.querySelectorAll('.serv-tab-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+        const i = btn.dataset.tab;
+        document.querySelectorAll('.serv-tab-btn').forEach(b => b.classList.remove('active'));
+        document.querySelectorAll('.serv-tab-panel').forEach(p => p.classList.remove('active'));
+        btn.classList.add('active');
+        document.querySelector(`.serv-tab-panel[data-panel="${i}"]`).classList.add('active');
+    });
+});
