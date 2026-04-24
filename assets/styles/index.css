@@ -943,12 +943,10 @@
  /* ============================
    PROCESO
 ============================ */
- .proceso-intro {
-     display: grid;
-     grid-template-columns: 1fr 1fr;
-     gap: 80px;
-     align-items: start;
-     margin-bottom: 56px
+
+ .mitad {
+     width: 49%;
+     display: inline-block;
  }
 
  .proceso-time-box {
@@ -2271,6 +2269,11 @@
      .serv-intro {
          grid-template-columns: 1fr;
          gap: 40px;
+     }
+
+     .mitad {
+         width: 95%;
+         display: inline-block;
      }
 
      .c {
