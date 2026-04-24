@@ -48,3 +48,33 @@ document.querySelectorAll('a[href^="#"]').forEach(a => {
         }
     })
 })
+
+//TIMELINE CARDS
+const btns = document.querySelectorAll('.exp-btn');
+const cards = document.querySelectorAll('.exp-card');
+let current = 0;
+let timer;
+
+function goTo(i) {
+    btns.forEach(b => b.classList.remove('active'));
+    cards.forEach(c => c.classList.remove('active'));
+    btns[i].classList.add('active');
+    cards[i].classList.add('active');
+    current = i;
+}
+
+function startAuto() {
+    timer = setInterval(() => {
+        goTo((current + 1) % cards.length);
+    }, 4000);
+}
+
+btns.forEach(btn => {
+    btn.addEventListener('click', () => {
+        clearInterval(timer);        // pausa el auto al hacer clic
+        goTo(Number(btn.dataset.index));
+        startAuto();                 // reinicia el contador desde 0
+    });
+});
+
+startAuto();

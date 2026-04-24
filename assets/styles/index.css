@@ -15,8 +15,9 @@
      --cream: #EDE8DE;
      --cream2: #D8D2C6;
      --cream3: #b8b0a4;
-     --red: #C41230;
-     --red2: #9a0e26;
+     --red: #e8163a;
+     /* --red2: #9a0e26; */
+     --red2: #e8163a;
      --red3: #e8163a;
      --white: #fff;
      --g1: #2a2a2a;
@@ -192,7 +193,8 @@
 
  .sh h2 {
      font-family: 'Bebas Neue', sans-serif;
-     font-size: clamp(44px, 7vw, 84px);
+     /* font-size: clamp(44px, 7vw, 84px); */
+     font-size: 4rem;
      color: var(--white);
      line-height: .9;
      margin-bottom: 20px;
@@ -731,7 +733,7 @@
      display: grid;
      grid-template-columns: 1fr 1fr;
      gap: 80px;
-     align-items: start
+     align-items: top;
  }
 
  .sobre-left p {
@@ -749,49 +751,124 @@
      opacity: 1
  }
 
- .timeline {
+ /* .timeline {
      display: flex;
      flex-direction: column;
      gap: 0;
-     margin-top: 8px
- }
+     margin-top: 8px;
+     background-color: var(--white);
+     padding: 1rem;
+ } */
 
- .tl-item {
+ /* .tl-item {
      display: grid;
      grid-template-columns: 90px 1fr;
      gap: 24px;
      padding: 20px 0;
      border-bottom: 1px solid var(--g1)
- }
+ } */
 
- .tl-item:last-child {
+ /* .tl-item:last-child {
      border-bottom: none
- }
-
+ } */
+ /* 
  .tl-year {
      font-family: 'Bebas Neue', sans-serif;
-     font-size: 15px;
+     font-size: 1rem;
      color: var(--red);
-     opacity: .55;
      letter-spacing: .06em;
      line-height: 1.4;
      padding-top: 3px
- }
+ } */
 
- .tl-content h4 {
-     font-size: 14px;
+ /* .tl-content h4 {
+     font-size: 1rem;
      font-weight: 600;
-     color: var(--cream);
+     color: var(--blk);
      margin-bottom: 4px;
      letter-spacing: .02em
+ } */
+
+ /* .tl-content p {
+     font-size: 1rem;
+     font-weight: 300;
+     color: var(--blk);
+     
+     line-height: 1.6;
+     text-align: justify;
+ } */
+
+ .exp-cards {
+     background: var(--blk2);
+     border: 1px solid var(--g1);
+     padding: 32px 28px;
+     height: 70%;
+     text-align: justify;
  }
 
- .tl-content p {
-     font-size: 13px;
-     font-weight: 300;
+ .exp-nav {
+     display: flex;
+     gap: 8px;
+     margin-bottom: 28px;
+     border-bottom: 1px solid var(--g1);
+     padding-bottom: 20px;
+ }
+
+ .exp-btn {
+     font-family: 'Bebas Neue', sans-serif;
+     font-size: 15px;
+     letter-spacing: .08em;
      color: var(--cream3);
-     opacity: .6;
-     line-height: 1.6
+     background: transparent;
+     border: 1px solid var(--g2);
+     padding: 6px 14px;
+     cursor: pointer;
+     opacity: .4;
+     transition: all .2s;
+ }
+
+ .exp-btn:hover {
+     opacity: .8;
+     border-color: var(--cream3);
+ }
+
+ .exp-btn.active {
+     color: var(--red);
+     border-color: var(--red);
+     opacity: 1;
+ }
+
+ .exp-card {
+     display: none;
+ }
+
+ .exp-card.active {
+     display: block;
+ }
+
+ .exp-year {
+     font-family: 'Bebas Neue', sans-serif;
+     font-size: 13px;
+     letter-spacing: .12em;
+     color: var(--red);
+     display: block;
+     margin-bottom: 10px;
+ }
+
+ .exp-card h4 {
+     font-size: 15px;
+     font-weight: 600;
+     color: var(--white);
+     margin-bottom: 12px;
+     letter-spacing: .02em;
+ }
+
+ .exp-card p {
+     font-size: 14px;
+     font-weight: 300;
+     color: var(--cream2);
+     opacity: .65;
+     line-height: 1.72;
  }
 
  .brands-row {
@@ -807,9 +884,9 @@
      letter-spacing: .16em;
      text-transform: uppercase;
      padding: 5px 12px;
-     border: 1px solid var(--g2);
-     color: var(--cream3);
-     opacity: .5
+     border: 1px solid var(--red);
+     color: var(--red);
+     /* opacity: .5 */
  }
 
  /* ============================
@@ -1978,9 +2055,17 @@
      section {
          padding: 80px 0
      }
+     exp-cards{
+        height: 90%;
+        width: 90%;
+     }
  }
 
  @media(max-width:520px) {
+    exp-cards{
+        height: 90%;
+        width: 90%;
+     }
      .c {
          padding: 0 1.25rem
      }
@@ -2028,5 +2113,11 @@
 
      .results-nums {
          gap: 20px
+     }
+ }
+
+ @media(max-width:375px) {
+    exp-cards{
+        display: none;
      }
  }
