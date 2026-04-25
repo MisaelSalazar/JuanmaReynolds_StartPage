@@ -50,7 +50,7 @@ document.querySelectorAll('a[href^="#"]').forEach(a => {
 })
 
 //TIMELINE CARDS
-const btns = document.querySelectorAll('.exp-btn');
+/**const btns = document.querySelectorAll('.exp-btn');
 const cards = document.querySelectorAll('.exp-card');
 let current = 0;
 let timer;
@@ -77,7 +77,7 @@ btns.forEach(btn => {
     });
 });
 
-startAuto();
+startAuto();**/
 
 //SERVICIOS
 document.querySelectorAll('.serv-tab-btn').forEach(btn => {
