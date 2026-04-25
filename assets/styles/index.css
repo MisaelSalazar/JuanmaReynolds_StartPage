@@ -15,8 +15,9 @@
      --cream: #EDE8DE;
      --cream2: #D8D2C6;
      --cream3: #b8b0a4;
-     --red: #C41230;
-     --red2: #9a0e26;
+     --red: #e8163a;
+     /* --red2: #9a0e26; */
+     --red2: #e8163a;
      --red3: #e8163a;
      --white: #fff;
      --g1: #2a2a2a;
@@ -44,7 +45,7 @@
      content: '';
      position: fixed;
      inset: 0;
-     background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.035'/%3E%3C/svg%3E");
+     /* background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.035'/%3E%3C/svg%3E"); */
      pointer-events: none;
      z-index: 500;
      opacity: .55
@@ -104,7 +105,7 @@
  }
 
  .c {
-     max-width: 1080px;
+     /* max-width: 1080px; */
      margin: 0 auto;
      padding: 0 3rem
  }
@@ -192,7 +193,8 @@
 
  .sh h2 {
      font-family: 'Bebas Neue', sans-serif;
-     font-size: clamp(44px, 7vw, 84px);
+     /* font-size: clamp(44px, 7vw, 84px); */
+     font-size: 4rem;
      color: var(--white);
      line-height: .9;
      margin-bottom: 20px;
@@ -266,8 +268,8 @@
      left: 0;
      right: 0;
      z-index: 300;
-     padding: 20px 0;
-     transition: all .3s
+     padding: 3.5rem 0;
+     transition: all .3s;
  }
 
  nav.scrolled {
@@ -462,13 +464,14 @@
    HERO
 ============================ */
  .hero {
-     min-height: 100vh;
+     /* min-height: 100vh; */
      display: flex;
-     align-items: center;
-     position: relative;
-     overflow: hidden;
+     /* align-items: center; */
+     /* position: relative; */
+     /* overflow: hidden; */
      border-bottom: 1px solid var(--g1);
-     padding: 0
+     padding: 0;
+     width: 100%;
  }
 
  .hero-deco-v {
@@ -520,7 +523,7 @@
  }
 
  .hero-grid {
-     max-width: 1080px;
+     /* max-width: 1080px; */
      margin: 0 auto;
      padding: 0 3rem;
      display: grid;
@@ -544,7 +547,8 @@
 
  .hero-name {
      font-family: 'Bebas Neue', sans-serif;
-     font-size: clamp(76px, 13vw, 148px);
+     /* font-size: clamp(7px, 13vw, 148px); */
+     font-size: 6rem;
      letter-spacing: .01em;
      line-height: .86;
      color: var(--white)
@@ -552,7 +556,7 @@
 
  .hero-name .accent {
      color: var(--red);
-     display: block
+     display: inline-block
  }
 
  .hero-tagline {
@@ -571,7 +575,7 @@
      color: var(--cream2);
      opacity: .72;
      line-height: 1.82;
-     max-width: 480px;
+     max-width: 80%;
      margin-bottom: 40px
  }
 
@@ -729,7 +733,7 @@
      display: grid;
      grid-template-columns: 1fr 1fr;
      gap: 80px;
-     align-items: start
+     align-items: top;
  }
 
  .sobre-left p {
@@ -747,50 +751,78 @@
      opacity: 1
  }
 
- .timeline {
+ /* .exp-cards {
+     background: var(--blk2);
+     border: 1px solid var(--g1);
+     padding: 32px 28px;
+     height: 70%;
+     text-align: justify;
+ }
+
+ .exp-nav {
      display: flex;
-     flex-direction: column;
-     gap: 0;
-     margin-top: 8px
+     gap: 8px;
+     margin-bottom: 28px;
+     border-bottom: 1px solid var(--g1);
+     padding-bottom: 20px;
  }
 
- .tl-item {
-     display: grid;
-     grid-template-columns: 90px 1fr;
-     gap: 24px;
-     padding: 20px 0;
-     border-bottom: 1px solid var(--g1)
- }
-
- .tl-item:last-child {
-     border-bottom: none
- }
-
- .tl-year {
+ .exp-btn {
      font-family: 'Bebas Neue', sans-serif;
      font-size: 15px;
-     color: var(--red);
-     opacity: .55;
-     letter-spacing: .06em;
-     line-height: 1.4;
-     padding-top: 3px
- }
-
- .tl-content h4 {
-     font-size: 14px;
-     font-weight: 600;
-     color: var(--cream);
-     margin-bottom: 4px;
-     letter-spacing: .02em
- }
-
- .tl-content p {
-     font-size: 13px;
-     font-weight: 300;
+     letter-spacing: .08em;
      color: var(--cream3);
-     opacity: .6;
-     line-height: 1.6
+     background: transparent;
+     border: 1px solid var(--g2);
+     padding: 6px 14px;
+     cursor: pointer;
+     opacity: .4;
+     transition: all .2s;
  }
+
+ .exp-btn:hover {
+     opacity: .8;
+     border-color: var(--cream3);
+ }
+
+ .exp-btn.active {
+     color: var(--red);
+     border-color: var(--red);
+     opacity: 1;
+ }
+
+ .exp-card {
+     display: none;
+ }
+
+ .exp-card.active {
+     display: block;
+ }
+
+ .exp-year {
+     font-family: 'Bebas Neue', sans-serif;
+     font-size: 13px;
+     letter-spacing: .12em;
+     color: var(--red);
+     display: block;
+     margin-bottom: 10px;
+ }
+
+ .exp-card h4 {
+     font-size: 15px;
+     font-weight: 600;
+     color: var(--white);
+     margin-bottom: 12px;
+     letter-spacing: .02em;
+ }
+
+ .exp-card p {
+     font-size: 14px;
+     font-weight: 300;
+     color: var(--cream2);
+     opacity: .65;
+     line-height: 1.72;
+ } */
 
  .brands-row {
      display: flex;
@@ -805,9 +837,9 @@
      letter-spacing: .16em;
      text-transform: uppercase;
      padding: 5px 12px;
-     border: 1px solid var(--g2);
-     color: var(--cream3);
-     opacity: .5
+     border: 1px solid var(--red);
+     color: var(--red);
+     /* opacity: .5 */
  }
 
  /* ============================
@@ -911,12 +943,10 @@
  /* ============================
    PROCESO
 ============================ */
- .proceso-intro {
-     display: grid;
-     grid-template-columns: 1fr 1fr;
-     gap: 80px;
-     align-items: start;
-     margin-bottom: 56px
+
+ .mitad {
+     width: 49%;
+     display: inline-block;
  }
 
  .proceso-time-box {
@@ -1312,7 +1342,7 @@
      width: 100%;
      display: block;
      background: #000;
-     max-height: 360px
+     /* max-height: 360px */
  }
 
  .vid-note {
@@ -1338,7 +1368,8 @@
  .vvid-grid {
      display: grid;
      grid-template-columns: repeat(2, 1fr);
-     gap: 12px
+     gap: 12px;
+     justify-items: center;
  }
 
  .vvid-item {
@@ -1347,11 +1378,17 @@
 
  .vvid-item video {
      width: 100%;
+     height: 420px;
      display: block;
      background: #000;
      border-radius: 0;
-     max-height: 400px;
-     object-fit: cover
+     /* max-height: 10%; */
+     aspect-ratio: 9 / 16;
+     /* ← respeta el formato vertical */
+     object-fit: contain;
+     /* ← muestra el video completo sin recortar */
+     max-height: none;
+     /* ← cancela el límite global */
  }
 
  .vvid-badge {
@@ -1649,7 +1686,7 @@
      background: var(--g1)
  }
 
- .serv-card {
+ /* .serv-card {
      background: var(--blk2);
      padding: 32px 28px;
      transition: background .2s;
@@ -1676,15 +1713,15 @@
 
  .serv-card:hover::after {
      transform: scaleX(1)
- }
+ } */
 
- .serv-icon {
+ /* .serv-icon {
      font-size: 24px;
      margin-bottom: 14px;
      display: block
- }
+ } */
 
- .serv-card h3 {
+ /* .serv-card h3 {
      font-family: 'Bebas Neue', sans-serif;
      font-size: 22px;
      letter-spacing: .04em;
@@ -1698,9 +1735,212 @@
      color: var(--cream2);
      opacity: .6;
      line-height: 1.68
+ } */
+ .serv-tabs {
+     display: flex;
+     flex-direction: column;
+     gap: 0;
+     background: var(--g1);
+     border: 1px solid var(--g1);
  }
 
- .results-bar {
+ .serv-tab-list {
+     display: flex;
+     flex-direction: row;
+     border-bottom: 1px solid var(--g1);
+     background: var(--blk2);
+     overflow-x: auto;
+     scrollbar-width: none;
+ }
+
+ .serv-tab-list::-webkit-scrollbar {
+     display: none;
+ }
+
+ .serv-tab-btn {
+     display: flex;
+     align-items: center;
+     gap: 10px;
+     padding: 20px 28px;
+     background: transparent;
+     border: none;
+     border-right: 1px solid var(--g1);
+     border-bottom: 2px solid transparent;
+     cursor: pointer;
+     text-align: left;
+     transition: background .2s, border-color .2s;
+     white-space: nowrap;
+     flex-shrink: 0;
+ }
+
+ .serv-tab-btn:last-child {
+     border-right: none;
+ }
+
+ .serv-tab-btn:hover {
+     background: var(--blk3);
+ }
+
+ .serv-tab-btn.active {
+     background: var(--blk3);
+     border-bottom: 2px solid var(--red);
+ }
+
+ .serv-tab-num {
+     font-family: 'Bebas Neue', sans-serif;
+     font-size: 12px;
+     letter-spacing: .1em;
+     color: var(--red);
+     opacity: .5;
+     flex-shrink: 0;
+     transition: opacity .2s;
+ }
+
+ .serv-tab-btn.active .serv-tab-num {
+     opacity: 1;
+ }
+
+ .serv-tab-name {
+     font-family: 'Bebas Neue', sans-serif;
+     font-size: 15px;
+     letter-spacing: .04em;
+     color: var(--cream2);
+     opacity: .5;
+     transition: opacity .2s, color .2s;
+ }
+
+ .serv-tab-btn.active .serv-tab-name,
+ .serv-tab-btn:hover .serv-tab-name {
+     opacity: 1;
+     color: var(--white);
+ }
+
+ .serv-tab-content {
+     background: var(--blk2);
+ }
+
+ .serv-tab-panel {
+     display: none;
+     padding: 48px 40px;
+     flex-direction: column;
+     gap: 20px;
+ }
+
+ .serv-tab-panel.active {
+     display: flex;
+ }
+
+ .serv-panel-icon {
+     font-size: 22px;
+     color: var(--red);
+ }
+
+ .serv-tab-panel h3 {
+     font-family: 'Bebas Neue', sans-serif;
+     font-size: 28px;
+     letter-spacing: .04em;
+     color: var(--white);
+     line-height: 1;
+ }
+
+ .serv-tab-panel p {
+     font-size: 15px;
+     font-weight: 300;
+     color: var(--cream2);
+     opacity: .7;
+     line-height: 1.78;
+     max-width: 600px;
+ }
+
+ .serv-panel-list {
+     list-style: none;
+     display: grid;
+     grid-template-columns: 1fr 1fr;
+     gap: 10px 40px;
+     margin-top: 8px;
+     padding-top: 20px;
+     border-top: 1px solid var(--g1);
+ }
+
+ .serv-panel-list li {
+     font-size: 13px;
+     font-weight: 400;
+     color: var(--cream3);
+     opacity: .6;
+     padding-left: 16px;
+     position: relative;
+     letter-spacing: .02em;
+ }
+
+ .serv-panel-list li::before {
+     content: '—';
+     position: absolute;
+     left: 0;
+     color: var(--red);
+     opacity: .7;
+ }
+
+ /* RESPONSIVE */
+ @media (max-width: 900px) {
+     .serv-intro {
+         grid-template-columns: 1fr;
+         gap: 40px;
+     }
+
+     .results-bar {
+         width: 100%;
+         display: block;
+     }
+
+     .serv-tab-btn {
+         padding: 16px 20px;
+     }
+
+     .serv-tab-name {
+         font-size: 13px;
+     }
+
+     .serv-tab-panel {
+         padding: 32px 28px;
+     }
+
+     .serv-panel-list {
+         grid-template-columns: 1fr;
+     }
+ }
+
+ @media (max-width: 520px) {
+
+     .results-bar {
+         width: 100%;
+         display: block;
+     }
+
+     .serv-tab-btn {
+         padding: 14px 16px;
+         gap: 8px;
+     }
+
+     .serv-tab-num {
+         display: none;
+     }
+
+     .serv-tab-name {
+         font-size: 12px;
+     }
+
+     .serv-tab-panel {
+         padding: 28px 20px;
+     }
+
+     .serv-tab-panel h3 {
+         font-size: 22px;
+     }
+ }
+
+ /*  */
+
+ /* .results-bar {
      background: var(--red);
      padding: 36px 48px;
      margin-top: 3px;
@@ -1708,7 +1948,40 @@
      grid-template-columns: 1fr auto;
      gap: 40px;
      align-items: center
+ } */
+ .serv-intro {
+     display: grid;
+     grid-template-columns: 1fr 1fr;
+     gap: 60px;
+     align-items: center;
+     margin-bottom: 60px;
  }
+
+ .serv-intro .sh {
+     margin-bottom: 0;
+ }
+
+ .serv-intro .results-bar {
+     background: var(--red);
+     padding: 36px 32px;
+     display: flex;
+     flex-direction: column;
+     gap: 0;
+ }
+
+ .serv-intro .results-nums {
+     display: flex;
+     gap: 0;
+     flex-wrap: wrap;
+     justify-content: space-between;
+ }
+
+ .serv-intro .rn {
+     text-align: center;
+     flex: 1;
+ }
+
+ /*  */
 
  .results-bar-quote {
      font-family: 'Cormorant Garamond', serif;
@@ -1881,9 +2154,243 @@
  }
 
  /* ============================
+  EMPRESAS MARQUEE
+============================ */
+ .empresas {
+     padding: 0;
+     border-bottom: 1px solid var(--g1);
+ }
+
+ .emp-mq-wrap {
+     overflow: hidden;
+     background: var(--blk2);
+     padding: 20px 0;
+     position: relative;
+ }
+
+ .emp-mq-wrap::before,
+ .emp-mq-wrap::after {
+     content: '';
+     position: absolute;
+     top: 0;
+     bottom: 0;
+     width: 120px;
+     z-index: 2;
+     pointer-events: none;
+ }
+
+ .emp-mq-wrap::before {
+     left: 0;
+     background: linear-gradient(to right, var(--blk2), transparent);
+ }
+
+ .emp-mq-wrap::after {
+     right: 0;
+     background: linear-gradient(to left, var(--blk2), transparent);
+ }
+
+ .emp-mq-track {
+     display: inline-flex;
+     align-items: center;
+     flex-wrap: nowrap;
+     white-space: nowrap;
+     animation: emp-scroll 32s linear infinite;
+ }
+
+ .emp-mq-track:hover {
+     animation-play-state: paused;
+ }
+
+ @keyframes emp-scroll {
+     from {
+         transform: translateX(0);
+     }
+
+     to {
+         transform: translateX(-50%);
+     }
+ }
+
+ /* .emp-item {
+     display: inline-flex;
+     align-items: center;
+     gap: 10px;
+     padding: 0 36px;
+     opacity: .4;
+     transition: opacity .2s;
+     cursor: default;
+     flex-shrink: 0;
+ } */
+ .emp-item {
+     display: inline-flex;
+     flex-direction: column;
+     align-items: center;
+     gap: 8px;
+     padding: 0 36px;
+     opacity: .4;
+     transition: opacity .2s;
+     cursor: default;
+     flex-shrink: 0;
+ }
+
+ .emp-item:hover {
+     opacity: 1;
+ }
+
+ .emp-logo {
+     width: 4rem;
+     height: 4rem;
+     object-fit: contain;
+     filter: grayscale(1) brightness(2);
+     display: block;
+     flex-shrink: 0;
+ }
+
+ .emp-item:hover .emp-logo {
+     filter: none;
+ }
+
+ .emp-item span {
+     font-family: 'Bebas Neue', sans-serif;
+     font-size: 16px;
+     letter-spacing: .12em;
+     text-transform: uppercase;
+     color: var(--cream3);
+     flex-shrink: 0;
+ }
+
+ .emp-dot {
+     width: 4px;
+     height: 4px;
+     background: var(--red);
+     border-radius: 50%;
+     opacity: .6;
+     flex-shrink: 0;
+     display: inline-block;
+ }
+
+ /* ============================
+  TESTIMONIOS
+============================ */
+ #testimonios {
+     overflow: hidden;
+     padding-bottom: 108px;
+ }
+
+ .test-mq-wrap {
+     position: relative;
+     overflow: hidden;
+     padding: 12px 0;
+ }
+
+ .test-mq-wrap::before,
+ .test-mq-wrap::after {
+     content: '';
+     position: absolute;
+     top: 0;
+     bottom: 0;
+     width: 160px;
+     z-index: 2;
+     pointer-events: none;
+ }
+
+ .test-mq-wrap::before {
+     left: 0;
+     background: linear-gradient(to right, var(--blk), transparent);
+ }
+
+ .test-mq-wrap::after {
+     right: 0;
+     background: linear-gradient(to left, var(--blk), transparent);
+ }
+
+ .test-mq-track {
+     display: inline-flex;
+     align-items: stretch;
+     gap: 16px;
+     white-space: nowrap;
+     flex-wrap: nowrap;
+     animation: test-scroll 22s linear infinite;
+ }
+
+ .test-mq-track:hover {
+     animation-play-state: paused;
+ }
+
+ @keyframes test-scroll {
+     from {
+         transform: translateX(0);
+     }
+
+     to {
+         transform: translateX(-50%);
+     }
+ }
+
+ .test-card {
+     display: inline-flex;
+     flex-direction: column;
+     gap: 20px;
+     background: var(--blk2);
+     border: 1px solid var(--g1);
+     padding: 32px 36px;
+     width: 380px;
+     white-space: normal;
+     flex-shrink: 0;
+     transition: border-color .2s, background .2s;
+     vertical-align: top;
+ }
+
+ .test-card:hover {
+     border-color: var(--red);
+     background: var(--blk3);
+ }
+
+ .test-quote-icon {
+     font-size: 16px;
+     color: var(--red);
+     opacity: .7;
+ }
+
+ .test-text {
+     font-family: 'Cormorant Garamond', serif;
+     font-style: italic;
+     font-size: 18px;
+     color: var(--cream);
+     line-height: 1.6;
+     opacity: .85;
+     flex: 1;
+ }
+
+ .test-author {
+     padding-top: 16px;
+     border-top: 1px solid var(--g1);
+ }
+
+ .test-name {
+     font-family: 'Jost', sans-serif;
+     font-size: 11px;
+     font-weight: 700;
+     letter-spacing: .18em;
+     text-transform: uppercase;
+     color: var(--cream3);
+     opacity: .5;
+ }
+
+ /* ============================
    RESPONSIVE
 ============================ */
  @media(max-width:900px) {
+     .serv-intro {
+         grid-template-columns: 1fr;
+         gap: 40px;
+     }
+
+     .mitad {
+         width: 95%;
+         display: inline-block;
+     }
+
      .c {
          padding: 0 2rem
      }
@@ -1976,9 +2483,19 @@
      section {
          padding: 80px 0
      }
+
+     exp-cards {
+         height: 90%;
+         width: 90%;
+     }
  }
 
  @media(max-width:520px) {
+     exp-cards {
+         height: 90%;
+         width: 90%;
+     }
+
      .c {
          padding: 0 1.25rem
      }
@@ -2026,5 +2543,11 @@
 
      .results-nums {
          gap: 20px
+     }
+ }
+
+ @media(max-width:375px) {
+     exp-cards {
+         display: none;
      }
  }

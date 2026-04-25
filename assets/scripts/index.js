@@ -48,3 +48,44 @@ document.querySelectorAll('a[href^="#"]').forEach(a => {
         }
     })
 })
+
+//TIMELINE CARDS
+/**const btns = document.querySelectorAll('.exp-btn');
+const cards = document.querySelectorAll('.exp-card');
+let current = 0;
+let timer;
+
+function goTo(i) {
+    btns.forEach(b => b.classList.remove('active'));
+    cards.forEach(c => c.classList.remove('active'));
+    btns[i].classList.add('active');
+    cards[i].classList.add('active');
+    current = i;
+}
+
+function startAuto() {
+    timer = setInterval(() => {
+        goTo((current + 1) % cards.length);
+    }, 4000);
+}
+
+btns.forEach(btn => {
+    btn.addEventListener('click', () => {
+        clearInterval(timer);        // pausa el auto al hacer clic
+        goTo(Number(btn.dataset.index));
+        startAuto();                 // reinicia el contador desde 0
+    });
+});
+
+startAuto();**/
+
+//SERVICIOS
+document.querySelectorAll('.serv-tab-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+        const i = btn.dataset.tab;
+        document.querySelectorAll('.serv-tab-btn').forEach(b => b.classList.remove('active'));
+        document.querySelectorAll('.serv-tab-panel').forEach(p => p.classList.remove('active'));
+        btn.classList.add('active');
+        document.querySelector(`.serv-tab-panel[data-panel="${i}"]`).classList.add('active');
+    });
+});
